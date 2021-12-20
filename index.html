@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KommunalValg</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+    <script src="javascript.js" defer></script>
+</head>
+<body>
+<h1>Kommunalvalg 2021</h1>
+<table class="table" id="end-table" style="display: none">
+    <thead>
+    <tr>
+        <th id="party-name-head-end">Party</th>
+        <th id="party-letter-head-end">Party letter</th>
+        <th id="vote-head-end">Total Votes</th>
+        <th id="vote-procentage-head-end">Procentage of votes</th>
+        <th><a></a></th>
+    </tr>
+    </thead>
+    <tbody id="vote-end-table-body">
+    </tbody>
+</table>
+<div style="height: 600px;overflow-y: scroll;">
+    <table class="table" id="table">
+        <thead>
+        <tr>
+            <th id="id-head">Id</th>
+            <th id="name-head">Name</th>
+            <th id="vote-head">Votes</th>
+            <th id="party-head">Party</th>
+            <th><a></a></th>
+        </tr>
+        </thead>
+        <tbody id="candidate-table-body">
+        </tbody>
+    </table>
+</div>
+<button id="btn-new-candidate">Add new Candidate</button>
+
+<!-- Modal -->
+<div class="modal fade" id="candidate-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modal-title">Add </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p >User ID: <span id="candidate-id"></span></p>
+                <form>
+                    <div class="mb-3">
+                        <label for="input-name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="input-name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="input-votes" class="form-label">Votes</label>
+                        <input type="number" class="form-control" id="input-votes" min="0">
+                    </div>
+                    <div class="mb-3">
+                        <label for="input-party">Choose a Party</label>
+                        <select id="input-party" name="party">
+                            <option value="Socialdemokratiet">Socialdemokratiet</option>
+                            <option value="Det konservative Folkeparti">Det konservative Folkeparti</option>
+                            <option value="SF, Socialistisk Folkeparti">SF, Socialistisk Folkeparti</option>
+                            <option value="Dansk Folkeparti">Dansk Folkeparti</option>
+                            <option value="Venstre, Danmarks Liberale Parti">Venstre, Danmarks Liberale Parti</option>
+                            <option value="Enhedslisten + De Rød Grønne">Enhedslisten + De Rød Grønne</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cancel</button>
+                <button id="btn-save" type="button" class="btn btn-primary" data-bs-dismiss="modal">Save changes
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--END OF MODAL -->
+
+<button id="btn-end-election">End election</button>
+</body>
+</html>
