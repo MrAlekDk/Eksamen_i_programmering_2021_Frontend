@@ -86,7 +86,6 @@ function saveChanges() {
     candidate.antalStemmer = document.getElementById("input-votes").value
     candidate.parti = parties.find(p => p.partiId == partyId)
 
-    console.log(candidate)
 //determine method + create header and body
     const method = candidateId ? "PUT" : "POST"
     const URLCreate = (method === "PUT") ? UrlCandidates + "/" + candidateId : UrlCandidates + "/" + partyId
@@ -144,7 +143,7 @@ function sortTable(evt) {
             }
             return 0
         })
-        sorted = true;
+        sorted = true
     } else if (sorted == true) {
         candidates.reverse()
     }
